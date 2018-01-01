@@ -1,0 +1,44 @@
+          Maven：（是一个项目管理工具）	下载地址：maven.apache.org
+Maven包含了一个项目对象模型POM（Project Object Model），一个标准组合，一个项目生命周期（Project Lifecycle），一个依赖管理系统（Dependency Management System），
+和用来运行定义在生命周期阶段（phase）中插件（plugin）目标（goal）的逻辑。
+
+<1>Maven是优秀的构建工具：①自动化构建过程，从清理、编译、测试到生成报告，再到打包和部署；
+					 ②是跨平台的，无论是window上，还是Linux或Mac上，都是用相同命令；
+					 ③能够帮助我们标准化构建过程。
+<2>是依赖管理工具：提供中央仓库，自动下载构件。通过一组坐标，能够找到任何一个java类。
+<3>项目信息管理工具：管理原本分散的项目信息，包括项目描述，版本控制系统地址，缺陷管理系统地址、许可证、开发者列表等。
+<4>对项目目录结构、测试用例命名等都有既定规则。
+
+ 		Maven仓库（地址：repo1.maven.org ）
+Maven仓库就是放置所有JAR文件（WAR、ZIP、POM等）的地方，所有Maven项目可以从同一个Maven仓库中获取自己所需的依赖JAR。
+国外仓库：www.mvnrepository.com
+国内仓库（国内私服）:一种特殊的远程仓库，它是架设在局域网内的仓库服务，私服代理广域网上的远程仓库，供局域网内的Maven用户使用。maven.aliyun.com   (杭州阿里巴巴)
+	私服优点：节省自己的外网带宽、加速Maven构建、部署第三方构件、提高稳定性，增强控制、降低中央仓库的负荷。
+中央仓库：包含了世界上大多数流行的开源Java构件。http://repo1.maven.org
+
+		理解maven： （maven融合了项目开发所有阶段，最主要的：控制依赖jar，仓库）							 
+1、jar包下载泰国分散导致开发人员开发周期延长，maven提供了中央仓库将所有的jar仓库聚合在一起；
+2、中央仓库计算网络资源有限，各地出现了各自的私服，降低中心服务压力，开发者就近原则获取最近的私服下载jar包；
+3、本地项目开发，如果需要下载jar包，必须依赖maven软件，maven软件需要配置私服的地址，配置本地缓存jar包位置。
+
+本地仓库：apache-maven-3.0.4_localtest/resp
+
+配置maven：
+<dependency>
+	<groupId>公司名（cn.easytop）</groupId>
+	<artifactId>项目名</artifactId>
+	<version>版本号</version>
+</dependency>
+
+			Maven常用命令
+mvn archetype:generate		创建Maven项目
+mvn complie		编译源代码
+mvn test-complie		编译测试代码
+mvn test		运行应用程序中的单元测试
+mvn site		生成项目相关信息的网站
+mvn clean		清除目标目录中的生产结果
+mvn package		依据项目生成jar文件
+mvn install		在本地Repository中安装jar
+mvn deploy		将jar包发布到远程仓库
+mvn eclipse:eclipse		生成eclipse项目文件				
+					 
